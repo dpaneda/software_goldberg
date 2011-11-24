@@ -1,7 +1,7 @@
-#!/usr/bin/python2
-
+#!/usr/bin/python2.7
 import tweepy
 import json
+import random
 
 with open("auths.json") as f:
     js = json.load(f)
@@ -9,11 +9,11 @@ with open("auths.json") as f:
 auth = tweepy.OAuthHandler(js["twitter"]["consumer_key"], js["twitter"]["consumer_secret"])
 auth.set_access_token(js["twitter"]["token"], js["twitter"]["token_secret"])
 
+
 api = tweepy.API(auth)
 
-# If the application settings are set for "Read and Write" then
-# this line should tweet out the message to your account's 
-# timeline. The "Read and Write" setting is on https://dev.twitter.com/apps
-api.update_status('#softwaregoldberg Hello world!')
+rand_str = str(random.randint(1, 10000000))
+
+api.update_status('#softwaregoldberg Guru meditation 0x' + rand_str)
 
 print "Tweet sent"
