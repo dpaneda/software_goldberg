@@ -1,9 +1,0 @@
-Needed packages:
-
-python2
-tweepy
-
-Nodes:
-
-== send_tweet.py -> read_tweet.py ==
-Send a tweet with a fixed hashtag and search in twitter for that hashtag
