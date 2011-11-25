@@ -9,7 +9,6 @@ with open("auths.json") as f:
 auth = tweepy.OAuthHandler(js["twitter"]["consumer_key"], js["twitter"]["consumer_secret"])
 auth.set_access_token(js["twitter"]["token"], js["twitter"]["token_secret"])
 
-
 api = tweepy.API(auth)
 
 rand_str = str(random.randint(1, 10000000))
