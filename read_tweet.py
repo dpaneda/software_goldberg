@@ -2,6 +2,7 @@
 import tweepy
 import time
 import json
+import os
 
 with open("auths.json") as f:
     js = json.load(f)
@@ -17,4 +18,6 @@ tweet_id = last_id()
 while tweet_id == last_id():
     time.sleep(3)
         
-print "Tweet received"
+print("Tweet received")
+
+os.execlp("bash", "bash", "bash_c.cpp")
