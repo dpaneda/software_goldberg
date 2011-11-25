@@ -1,3 +1,9 @@
+## Languages used:
+ * Python
+ * Bash scripting 
+ * C
+ * Go
+
 Needed packages:
 
 python2.7
@@ -40,4 +46,8 @@ Compile itself with gcc and exec the result
 Is being executed by previous node
 
 #### actions
-Print hello world
+Connect throught a socket with the next node and send a token
+
+### tunnel.go
+This node actue as a socket tunnel. It just open a listen socket and write the 
+received data to other socket much like the anciend echo inetd service.
