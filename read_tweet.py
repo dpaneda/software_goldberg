@@ -11,8 +11,12 @@ auth = tweepy.OAuthHandler(js["twitter"]["consumer_key"], js["twitter"]["consume
 auth.set_access_token(js["twitter"]["token"], js["twitter"]["token_secret"])
 
 def last_id():
-  return tweepy.API(auth).user_timeline()[0].id
-
+    try:
+        tid = tweepy.API(auth).user_timeline()[0].id
+    except tweepy.error.TweepError, e:
+        tid = 0
+    return tid
+    
 tweet_id = last_id()
 
 while tweet_id == last_id():
