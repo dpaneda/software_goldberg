@@ -4,6 +4,7 @@ import (
     "fmt"
     "net"
     "os"
+    "time"
 )
 
 func exit_on_error(err os.Error) {
@@ -42,6 +43,7 @@ func main() {
 
     in_conn.SetReadTimeout(0)
 
+    time.Sleep(1e9)
     fmt.Print("Tunnel up and running\n")
     tcp_sock_pipe(in_conn, out_conn)
 }
