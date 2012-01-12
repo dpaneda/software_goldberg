@@ -1,7 +1,7 @@
 #if 0
 sleep 1
 gcc -o /tmp/bash_cpp $0
-echo "Compiled bash_cpp"
+echo "[3] Compiled bash_cpp"
 exec /tmp/bash_cpp
 #endif
 
@@ -57,5 +57,5 @@ int main() {
     write(sfd, TOKEN, strlen(TOKEN));
     close(sfd);
 
-    printf("Token sent\n");
+    printf("[4] Token sent\n");
  }

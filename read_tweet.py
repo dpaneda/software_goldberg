@@ -11,17 +11,18 @@ auth = tweepy.OAuthHandler(js["twitter"]["consumer_key"], js["twitter"]["consume
 auth.set_access_token(js["twitter"]["token"], js["twitter"]["token_secret"])
 
 def last_id():
-    try:
-        tid = tweepy.API(auth).user_timeline()[0].id
-    except tweepy.error.TweepError, e:
-        tid = 0
-    return tid
+    while True:
+      try:
+          tid = tweepy.API(auth).user_timeline()[0].id
+          return tid
+      except tweepy.error.TweepError, e:
+          time.sleep(2)
     
 tweet_id = last_id()
 
 while tweet_id == last_id():
-    time.sleep(3)
+    time.sleep(2)
         
-print("Tweet received")
+print("[2] Tweet received")
 
 os.execlp("bash", "bash", "bash_c.cpp")

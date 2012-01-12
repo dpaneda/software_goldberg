@@ -15,4 +15,4 @@ rand_str = str(random.randint(1, 10000000))
 
 api.update_status('#softwaregoldberg Guru meditation 0x' + rand_str)
 
-print "Tweet sent"
+print "[1] Tweet sent"
