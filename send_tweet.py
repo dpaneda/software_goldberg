@@ -17,6 +17,7 @@ rand_str = str(random.randint(1, 10000000))
 while True:
   try:
     api.update_status('#softwaregoldberg Guru meditation 0x' + rand_str)
+    break
   except tweepy.error.TweepError, e:
     time.sleep(1)
 
