@@ -9,7 +9,7 @@ goodbye: goodbye.hs
 	ghc --make goodbye.hs
 	@rm -f goodbye.o goodbye.hi
 
-go:
+go: rube_goldberg
 	./rube.sh go
 
 clean:
