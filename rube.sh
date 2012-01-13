@@ -2,18 +2,18 @@
 
 COMMANDS="
 read_tweet.py \
+goodbye \
 tunnel
 "
 
 function start_machine {
   echo -n "Building rube goldberg machine, please wait"
-
-  ./read_tweet.py &
-  echo -n .
-  netcat -lp 7778 &
-  echo -n .
-  sleep 0.2
-  ./tunnel &
+  for program in $COMMANDS
+  do
+    echo -n .
+    ./$program &
+    sleep 0.1
+  done
   echo "OK"
 }
 
@@ -29,6 +29,7 @@ function stop_machine {
 
 case "$1" in
   start)
+    stop_machine
     start_machine
     ;;
   stop)
@@ -36,7 +37,7 @@ case "$1" in
     ;;
   go)
     start_machine
-    ./send_tweet.py
+    ./send_tweet.py &
     ;;
   *)
     echo "What ?"
