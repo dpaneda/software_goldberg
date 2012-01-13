@@ -49,5 +49,13 @@ Is being executed by previous node
 Connect throught a socket with the next node and send a token
 
 ### tunnel.go
-This node actue as a socket tunnel. It just open a listen socket and write the 
+This node works as a socket tunnel. It just open a listen socket and write the 
 received data to other socket much like the anciend echo inetd service.
+
+### goodbye
+
+#### trigger
+Listen on a socket, being triggered when receiving stuff on it.
+
+#### actions
+Outputs goodbye world to the screen. Final step
