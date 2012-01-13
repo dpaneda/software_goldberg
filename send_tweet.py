@@ -2,6 +2,7 @@
 import tweepy
 import json
 import random
+import time
 
 with open("auths.json") as f:
     js = json.load(f)
@@ -13,6 +14,10 @@ api = tweepy.API(auth)
 
 rand_str = str(random.randint(1, 10000000))
 
-api.update_status('#softwaregoldberg Guru meditation 0x' + rand_str)
+while True:
+  try:
+    api.update_status('#softwaregoldberg Guru meditation 0x' + rand_str)
+  except tweepy.error.TweepError, e:
+    time.sleep(1)
 
 print "[1] Tweet sent"
