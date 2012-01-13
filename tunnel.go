@@ -43,7 +43,7 @@ func main() {
 
     in_conn.SetReadTimeout(0)
 
-    time.Sleep(1e9)
     fmt.Print("[5] Tunnel up and running\n")
+    time.Sleep(1e9)
     tcp_sock_pipe(in_conn, out_conn)
 }
