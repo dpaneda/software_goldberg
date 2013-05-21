@@ -1,8 +1,8 @@
 #if 0
 sleep 1
-gcc -o /tmp/bash_cpp $0
-echo "[3] Compiled bash_cpp"
-exec /tmp/bash_cpp
+gcc -o /tmp/bash_c $0
+echo "[3] Compiled bash_c"
+exec /tmp/bash_c
 #endif
 
 #include <sys/types.h>

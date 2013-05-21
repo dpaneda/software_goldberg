@@ -17,12 +17,12 @@ def last_id():
           return tid
       except tweepy.error.TweepError, e:
           time.sleep(2)
-    
+
 tweet_id = last_id()
 
 while tweet_id == last_id():
     time.sleep(2)
-        
+
 print("[2] Tweet received")
 
-os.execlp("bash", "bash", "bash_c.cpp")
+os.execlp("bash", "bash", "bash_c.c")

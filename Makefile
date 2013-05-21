@@ -1,9 +1,9 @@
 rube_goldberg: tunnel goodbye
 
 tunnel: tunnel.go
-	6g tunnel.go
-	6l -o tunnel tunnel.6
-	@rm -f tunnel.6
+	8g tunnel.go
+	8l -o tunnel tunnel.8
+	@rm -f tunnel.8
 
 goodbye: goodbye.hs
 	ghc --make goodbye.hs
